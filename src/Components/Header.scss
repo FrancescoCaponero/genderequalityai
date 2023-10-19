@@ -1,0 +1,60 @@
+.header{
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    transition: all .2s ease-in-out;
+    color: white;
+    nav{
+        max-width: 900px;
+        width: 90%;
+        margin: 0 auto;
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            li{
+                a{
+                    font-size: .9rem;
+                    font-weight: 400;
+                    cursor: pointer;
+                    &:hover{
+                        text-decoration:overline;
+                        opacity: .3;
+                    }
+                }
+            }
+        }
+    }
+}
+.active-header{
+    top: 0;
+    background-color: white;
+    height: 50px;
+    color: black;
+}
+.fixedbtn{
+    transition: all .5s ease-in-out;
+    visibility: hidden;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    opacity: 0;
+    svg{
+        height: 40px;
+        width: 40px;
+        fill: rgb(180, 244, 140);
+        cursor: pointer;
+    }
+    &:hover{
+        opacity: .4;
+    }
+
+}
+.active-fixed{
+    visibility: visible;
+    opacity: 1;
+    
+}

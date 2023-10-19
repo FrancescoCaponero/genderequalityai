@@ -1,0 +1,50 @@
+.schedule-section {
+    background-color: rgb(37,49,141);
+    color: #D6FB51;
+    .title-wrapper{
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        padding-top: 4rem;
+        h2{
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: .4rem;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 2.4rem;
+        }
+    }
+    .schedule-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 90%;
+        width: 900px;
+        .col-wrap{
+            margin-top: 8rem;
+            margin-bottom: 10rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 10rem;
+            
+            .col-2{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 5rem;
+                .col-r{
+                    font-size: 1rem;
+                    min-width: 300px;
+                }
+            }
+        }
+    }
+}
