@@ -2,7 +2,7 @@ import './About.scss'
 
 const About = () => {
   return (
-    <section className="about-section">
+    <section id='about' className="about-section">
       <div className='title-wrapper'>
         <h2>
           01<br/>

@@ -2,7 +2,7 @@ import './FrontSection.scss'
 
 const FrontSection = () => {
   return (
-    <section className='front-section'>
+    <section id='home' className='front-section'>
       <div className="title-wrapper">
         <h1>
           Gender Equality<br/>&<br/>Artificial Intelligence

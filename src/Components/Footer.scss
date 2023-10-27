@@ -1,0 +1,21 @@
+footer{
+    width: 100%;
+    .footerwrap{
+        max-width: 900px;
+        width: 90%;
+        margin: 0 auto;
+        padding: 4rem 0rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    a{
+        color: rgb(30, 31, 31);
+        &:hover{
+            opacity: .6;
+        }
+    }
+    .copyclaim{
+        margin: 0 auto;
+        width: fit-content;
+    }
+}

@@ -1,25 +1,66 @@
+// Define Breakpoints
+$mobile: 480px;
+$tablet: 960px;
+$desktop: 1280px;
+
+@mixin respond-to($media) {
+  @if $media == small-mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+  @else if $media == mobile {
+    @media (max-width: $mobile ) { @content; }
+  }
+  @else if $media == tablet {
+    @media (max-width: $tablet ){ @content; }
+  }
+  @else if $media == desktop {
+    @media (max-width: $desktop) { @content; }
+  }
+}
 .header{
     position: fixed;
+    z-index: 9999;
     left: 0;
     top: 50px;
     width: 100%;
     transition: all .2s ease-in-out;
     color: white;
     nav{
-        max-width: 900px;
+        @include respond-to(tablet){
+            position: fixed;
+            z-index: 0;
+            inset: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            color: black;
+        }
         width: 90%;
-        margin: 0 auto;
         ul{
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            @include respond-to(tablet){
+                margin: 0;
+                padding: 0;
+                flex-direction: column;
+                position: absolute;
+                z-index: 990999;
+                color: black;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
             li{
                 a{
                     font-size: .9rem;
                     font-weight: 400;
                     cursor: pointer;
+                    @include respond-to(tablet) {
+                        font-size: 3rem;
+                    }
                     &:hover{
                         text-decoration:overline;
                         opacity: .3;
@@ -28,10 +69,24 @@
             }
         }
     }
+    .menu-mobile{
+        display: none;
+        @include respond-to(tablet) {
+            top: 50px;
+            z-index: 999;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+    }
 }
 .active-header{
     top: 0;
     background-color: white;
+    @include respond-to(tablet) {
+        background-color: initial;
+    }
     height: 50px;
     color: black;
 }
@@ -57,4 +112,9 @@
     visibility: visible;
     opacity: 1;
     
+}
+.nav2{
+    @include respond-to(tablet) {
+        display: none;
+    }
 }

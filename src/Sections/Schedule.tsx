@@ -2,7 +2,7 @@ import './Schedule.scss'
 
 const Schedule = () => {
   return (
-    <section className="schedule-section">
+    <section id='schedule' className="schedule-section">
       <div className='title-wrapper'>
         <h2>
           03<br/>

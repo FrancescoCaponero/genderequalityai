@@ -1,3 +1,21 @@
+$mobile: 480px;
+$tablet: 960px;
+$desktop: 1200px;
+
+@mixin respond-to($media) {
+  @if $media == small-mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+  @else if $media == mobile {
+    @media (max-width: $mobile ) { @content; }
+  }
+  @else if $media == tablet {
+    @media (max-width: $tablet ){ @content; }
+  }
+  @else if $media == desktop {
+    @media (max-width: $desktop) { @content; }
+  }
+}
 .schedule-section {
     background-color: rgb(37,49,141);
     color: #D6FB51;
@@ -40,6 +58,9 @@
                 justify-content: space-between;
                 align-items: center;
                 gap: 5rem;
+                @include respond-to(desktop){
+                    flex-direction: column;
+                }
                 .col-r{
                     font-size: 1rem;
                     min-width: 300px;

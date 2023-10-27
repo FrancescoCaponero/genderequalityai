@@ -1,3 +1,22 @@
+// Define Breakpoints
+$mobile: 480px;
+$tablet: 960px;
+$desktop: 1280px;
+
+@mixin respond-to($media) {
+  @if $media == small-mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+  @else if $media == mobile {
+    @media (max-width: $mobile ) { @content; }
+  }
+  @else if $media == tablet {
+    @media (max-width: $tablet ){ @content; }
+  }
+  @else if $media == desktop {
+    @media (max-width: $desktop) { @content; }
+  }
+}
 .about-section{
     width: 100%;
     background-color:#DB00A1;
@@ -25,5 +44,8 @@
         font-size: 2.2rem;
         color: white;
         font-weight: 200;
+        @include respond-to(tablet) {
+            font-size: 1.2rem;
+        }
     }
 }
