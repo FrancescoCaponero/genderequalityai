@@ -1,6 +1,11 @@
 import './Info.scss';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Rest of your application code
+// ...
+
 
 const Info = () => {
   return (
@@ -19,9 +24,12 @@ const Info = () => {
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png" // Remove the `{ext}`
             minZoom={0}
             maxZoom={20}
-            attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-          <Marker position={[42.35647, 13.40216]}>
+          <Marker position={[42.35647, 13.40216]}
+           icon={L.divIcon({
+            iconSize: [30,30],
+
+          })}>
             <Popup>
               <h2>Viale Nizza, 14, 67100 L'Aquila AQ, Italy</h2>
             </Popup>
